@@ -1,5 +1,6 @@
 package be.abstraction.bank.implementations
-import models.Bank
+import be.abstraction.core.interfaces.IBankProvider
+import be.abstraction.core.models.Bank
 
 class BankProvider : IBankProvider {
     override fun getBanks(): List<Bank> {
