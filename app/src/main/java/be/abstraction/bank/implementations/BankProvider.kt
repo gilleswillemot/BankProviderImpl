@@ -4,7 +4,7 @@ import be.abstraction.core.models.Bank
 
 class BankProvider : IBankProvider {
     override fun getBanks(): List<Bank> {
-        val bankNames = listOf( // todo: make json of each bank, for if we'd add fields in the future.
+        val bankNames = listOf(
             "BNP Paribas",
             "ING",
             "KBC",
