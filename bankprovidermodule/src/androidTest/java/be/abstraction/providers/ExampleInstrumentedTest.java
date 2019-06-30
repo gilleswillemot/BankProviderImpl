@@ -1,4 +1,4 @@
-package be.abstraction.bankprovidermodule;
+package be.abstraction.providers;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("be.abstraction.bankprovidermodule.test", appContext.getPackageName());
+        assertEquals("be.abstraction.implementations.test", appContext.getPackageName());
     }
 }

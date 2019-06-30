@@ -1,4 +1,4 @@
-package be.abstraction.bankprovidermodule;
+package be.abstraction.implementations;
 
 import org.junit.Test;
 
