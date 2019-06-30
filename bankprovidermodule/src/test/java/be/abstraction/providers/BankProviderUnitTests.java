@@ -11,6 +11,6 @@ public class BankProviderUnitTests {
         BankProvider bankProvider = new BankProvider();
         List<Bank> banks = bankProvider.getBanks();
 
-        assertEquals(5, banks.size());
+        assertEquals(8, banks.size());
     }
 }

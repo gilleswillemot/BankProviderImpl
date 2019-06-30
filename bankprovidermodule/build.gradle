@@ -1,8 +1,7 @@
-plugins {
-    id 'org.jetbrains.kotlin.multiplatform'
-}
-
 apply plugin: 'com.android.library'
+
+//apply plugin: 'kotlin-multiplatform'
+apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 repositories {
@@ -32,19 +31,19 @@ android {
 
 }
 
-kotlin {
-    macosX64("native") {
-        binaries {
-            framework {
-                baseName = "BankProviderIosFramework"
-            }
-        }
-    }
-    iosArm64()
-    iosX64()
-//    jvm() // Creates a JVM target with the default name 'jvm'
-//    js("nodeJs")  // JS target named 'js'
-}
+//kotlin {
+//    macosX64("native") {
+//        binaries {
+//            framework {
+//                baseName = "BankProviderIosFramework"
+//            }
+//        }
+//    }
+//    iosArm64()
+//    iosX64()
+////    jvm() // Creates a JVM target with the default name 'jvm'
+////    js("nodeJs")  // JS target named 'js'
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
