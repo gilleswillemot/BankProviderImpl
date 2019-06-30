@@ -1,4 +1,4 @@
-package be.abstraction.implementations;
+package be.abstraction.providers;
 
 import org.junit.Test;
 
