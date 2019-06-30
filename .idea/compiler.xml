@@ -2,12 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="bankApp-impl-sharedCode_jvmMain" target="1.6" />
-      <module name="bankApp-impl-sharedCode_jvmTest" target="1.6" />
       <module name="bankprovidermodule_jvmMain" target="1.6" />
       <module name="bankprovidermodule_jvmTest" target="1.6" />
-      <module name="sharedCode_jvmMain" target="1.6" />
-      <module name="sharedCode_jvmTest" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
