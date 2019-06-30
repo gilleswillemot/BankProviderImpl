@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="bankprovidermodule-jvm">
-    <output-path>C:\Users\Gilles\Desktop\Bachelorproef\code\bankApp-impl\bankprovidermodule\build\libs</output-path>
-    <root id="archive" name="bankprovidermodule-jvm.jar" />
-  </artifact>
-</component>

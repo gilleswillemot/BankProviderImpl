@@ -46,7 +46,7 @@ kotlin {
     }
     iosArm64()
     iosX64()
-    jvm() // Creates a JVM target with the default name 'jvm'
+//    jvm() // Creates a JVM target with the default name 'jvm'
 //    js("nodeJs")  // JS target named 'js'
 }
 
