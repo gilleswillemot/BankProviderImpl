@@ -1,8 +1,21 @@
-apply plugin: 'com.android.library'
+static def platformOf(project) {
+    // output can be seen in View -> Tool windows -> Build (log icon beneath hammer icon)
+    project.logger.lifecycle("project name: " + project.name)
+    if (project.name.endsWith("-common")) return "common"
+    if (project.name.endsWith("-ios")) return "native"
+    if (project.name.endsWith("-android")) return "android"
+    return "android"
+}
 
-//apply plugin: 'kotlin-multiplatform'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+def platform = platformOf(project)
+
+if (platform == "android") {
+    apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
+} else {
+    apply plugin: 'kotlin-multiplatform'
+}
 
 repositories {
     mavenCentral()
