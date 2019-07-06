@@ -1,15 +1,15 @@
 /**
+ * Creates a iOS framework of the BankProvider implementation in Kotlin,
+ * that can be included in a xCode project.
+ *
  * macOS host operating system is required to compile for iOS and macOS devices.
  * source: https://kotlinlang.org/docs/tutorials/native/mpp-ios-android.html
  */
-//apply plugin: 'kotlin-multiplatform'
+apply plugin: 'kotlin-multiplatform'
 
 //final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") \
 //        ? presets.iosArm64 : presets.iosX64
 
-// output can be seen in View -> Tool windows -> Build (log icon beneath hammer icon)
-//project.logger.lifecycle(project)
-//project.logger.lifecycle(iOSTarget)
 
 repositories {
     mavenCentral()
@@ -26,7 +26,7 @@ kotlin {
     }
 }
 
-wrapper {
-    gradleVersion = "5.3.1"
-    distributionType = "ALL"
-}
+//wrapper {
+//    gradleVersion = "5.3.1"
+//    distributionType = "ALL"
+//}

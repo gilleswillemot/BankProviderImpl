@@ -1,2 +1,25 @@
+/**
+ * Kotlin to JavaScript script.
+ *
+ * Build source: https://kotlinlang.org/docs/tutorials/javascript/getting-started-gradle/getting-started-with-gradle.html
+ * General information source: https://kotlinlang.org/docs/tutorials/javascript/kotlin-to-javascript/kotlin-to-javascript.html
+ */
+//buildscript {
+//    ext.kotlin_version = '1.3.41'
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//    }
+//}
 
-//    js("nodeJs")  // JS target named 'js'
+apply plugin: 'kotlin2js'
+
+//repositories {
+//    mavenCentral()
+//}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+}
