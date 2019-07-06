@@ -1,0 +1,32 @@
+/**
+ * macOS host operating system is required to compile for iOS and macOS devices.
+ * source: https://kotlinlang.org/docs/tutorials/native/mpp-ios-android.html
+ */
+//apply plugin: 'kotlin-multiplatform'
+
+//final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") \
+//        ? presets.iosArm64 : presets.iosX64
+
+// output can be seen in View -> Tool windows -> Build (log icon beneath hammer icon)
+//project.logger.lifecycle(project)
+//project.logger.lifecycle(iOSTarget)
+
+repositories {
+    mavenCentral()
+}
+
+// instruct configure the project to generate a dynamic or shared library for us
+kotlin {
+    macosX64("native") {
+        binaries {
+            framework {
+                baseName = "BankProviderFramework"
+            }
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = "5.3.1"
+    distributionType = "ALL"
+}
