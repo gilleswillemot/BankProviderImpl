@@ -1,0 +1,26 @@
+//usage of multiplatform as recommended by stackoverflow user:
+// https://stackoverflow.com/questions/53581474/js-module-build-fails-on-kotlin-multiplatform-project
+
+apply plugin: 'kotlin-multiplatform'
+
+// SourceSet: https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html
+kotlin {
+    sourceSets {
+        main {
+            kotlin.srcDir('src/main/java')
+            dependencies {
+                api 'com.github.gilleswillemot:bankApp-core:1.0.3'
+            }
+        }
+        js().compilations.main.defaultSourceSet {
+            dependencies {
+                implementation 'com.github.gilleswillemot:bankApp-core:1.0.3'
+            }
+        }
+        js().compilations.test.defaultSourceSet {
+            dependencies {
+                implementation 'com.github.gilleswillemot:bankApp-core:1.0.3'
+            }
+        }
+    }
+}

@@ -1,46 +1,17 @@
 /**
  * If executing a task in the gradle build (see commit: 472ee4f7baa9e67610494502000b39a9a1497e9f)
- * #: gradlew :bankprovidermodule:build task createFramework -PtestParameter="testValue"
+ * #:> gradlew :bankprovidermodule:build task createFramework -PtestParameter="testValue"
  *
  * To execute this build.gradle file with a parameter (e.g. to build a ios framework) =>
- * #: gradlew :bankprovidermodule:build -Pios="iosSimulatorTarget"
+ * #:> gradlew :bankprovidermodule:build -Pios="iosSimulatorTarget"
  * (iosSimulatorTarget could be ios_x64, ios_arm64, ...)
+ *
+ * To execute kotlin2js => #:> gradlew :bankprovidermodule:build -Pjs
+ *
+ * To execute normal (android library build) => #:> gradlew :bankprovidermodule:build
  */
-apply plugin: 'com.android.library'
 
-repositories {
-    mavenCentral()
-}
-
-android {
-    compileSdkVersion 28
-
-
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-}
-
-/* ############################################################################################ */
-/* ##  IOS BUILD FRAMEWORK WHEN EXECUTING BUILD GRADLE SCRIPT WITH "ios" PARAMETER           ## */
-/* ############################################################################################ */
-/** Check if build script was run with parameter ios, in order to create an ios framework
- * gradlew :bankprovidermodule:build -Pios="ios_x64"
- */
+// Check if build script was run with parameter ios, in order to create an ios framework
 if (project.hasProperty("ios")) {
     /**
      * Executing 'build-ios-framework' gradle script.
@@ -58,20 +29,18 @@ if (project.hasProperty("ios")) {
 // check if following command was executed in terminal: gradlew :bankprovidermodule:build -Pjs
 else if (project.hasProperty("js")) {
     apply from: "build-js.gradle"
+//    apply from: "build-js-multiplatform.gradle"
 } else {
-    apply plugin: 'kotlin-android'
-    apply plugin: 'kotlin-android-extensions'
+    apply from: "android-build.gradle"
 }
 
-/* ################################################################################################ */
-
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.github.gilleswillemot:bankApp-core:1.0.2'
+    implementation 'com.github.gilleswillemot:bankApp-core:1.0.3'
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

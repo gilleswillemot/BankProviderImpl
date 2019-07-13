@@ -1,15 +1,15 @@
+/* ############################################################################################ */
+/* ##  IOS BUILD FRAMEWORK WHEN EXECUTING BUILD GRADLE SCRIPT WITH "ios" PARAMETER           ## */
+/* ############################################################################################ */
 /**
- * Creates a iOS framework of the BankProvider implementation in Kotlin,
+ * Creates an iOS framework of the BankProvider implementation in Kotlin,
  * that can be included in a xCode project.
  *
- * macOS host operating system is required to compile for iOS and macOS devices.
+ * IMPORTANT: macOS host operating system is required to compile for iOS and macOS devices.
  * source: https://kotlinlang.org/docs/tutorials/native/mpp-ios-android.html
  */
+
 apply plugin: 'kotlin-multiplatform'
-
-//final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") \
-//        ? presets.iosArm64 : presets.iosX64
-
 
 repositories {
     mavenCentral()
