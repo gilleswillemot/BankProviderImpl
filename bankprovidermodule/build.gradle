@@ -1,46 +1,66 @@
-/**
- * If executing a task in the gradle build (see commit: 472ee4f7baa9e67610494502000b39a9a1497e9f)
- * #:> gradlew :bankprovidermodule:build task createFramework -PtestParameter="testValue"
- *
- * To execute this build.gradle file with a parameter (e.g. to build a ios framework) =>
- * #:> gradlew :bankprovidermodule:build -Pios="iosSimulatorTarget"
- * (iosSimulatorTarget could be ios_x64, ios_arm64, ...)
- *
- * To execute kotlin2js => #:> gradlew :bankprovidermodule:build -Pjs
- *
- * To execute normal (android library build) => #:> gradlew :bankprovidermodule:build
- */
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-multiplatform'
 
-// Check if build script was run with parameter ios, in order to create an ios framework
-if (project.hasProperty("ios")) {
-    /**
-     * Executing 'build-ios-framework' gradle script.
-     *
-     * The 'from' parameter can be a URL, so you can make your shared scripts available via HTTP somewhere
-     * eg your subversion repository), and import them from multiple builds.
-     * Source: https://docs.gradle.org/current/userguide/userguide_single.html#sec:configuring_using_external_script
-     */
-    apply from: "build-ios-framework.gradle"
-
-    //LOGGING: output can be seen in View -> Tool windows -> Build (log icon beneath hammer icon)
-    project.logger.lifecycle(project.ios)
-
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 }
-// check if following command was executed in terminal: gradlew :bankprovidermodule:build -Pjs
-else if (project.hasProperty("js")) {
-    apply from: "build-js.gradle"
-//    apply from: "build-js-multiplatform.gradle"
-} else {
-    apply from: "android-build.gradle"
+
+kotlin {
+    js()
+
+    sourceSets {
+        // We add the source set origin, otherwise the files in src/main/java would not be compiled.
+        main.kotlin.srcDirs += 'src/main/java'
+
+        commonMain {
+            dependsOn main
+            kotlin.srcDir('src')
+            dependencies {
+            }
+        }
+//        commonTest {
+//            dependsOn main
+//            kotlin.srcDir('test')
+//        }
+//        jsMain {
+//            dependsOn main
+//            dependsOn commonMain
+////          kotlin.srcDir('src')
+//            dependencies {
+//                implementation 'com.github.gilleswillemot:bankApp-core-js:1.0.5'
+//           }
+//        }
+    }
 }
 
 dependencies {
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.github.gilleswillemot:bankApp-core:1.0.3'
+    // dependency on another multi-platform library
+    implementation 'com.github.gilleswillemot:bankApp-core:1.1.1'
 
-//    testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // this is needed to compile kotlin code to js (e.g. listOf and it)
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
 }

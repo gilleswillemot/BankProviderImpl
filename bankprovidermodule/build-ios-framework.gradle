@@ -21,6 +21,9 @@ kotlin {
         binaries {
             framework {
                 baseName = "BankProviderFramework"
+
+                // Exporting dependencies in frameworks
+                export 'com.github.gilleswillemot:bankApp-core-js:1.0.5'
             }
         }
     }
