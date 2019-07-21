@@ -1,35 +1,35 @@
-/* ############################################################################################ */
-/* ##  IOS BUILD FRAMEWORK WHEN EXECUTING BUILD GRADLE SCRIPT WITH "ios" PARAMETER           ## */
-/* ############################################################################################ */
-/**
- * Creates an iOS framework of the BankProvider implementation in Kotlin,
- * that can be included in a xCode project.
- *
- * IMPORTANT: macOS host operating system is required to compile for iOS and macOS devices.
- * source: https://kotlinlang.org/docs/tutorials/native/mpp-ios-android.html
- */
-
-apply plugin: 'kotlin-multiplatform'
-
-repositories {
-    mavenCentral()
-}
-
-// instruct configure the project to generate a dynamic or shared library for us
-kotlin {
-    macosX64("native") {
-        binaries {
-            framework {
-                baseName = "BankProviderFramework"
-
-                // Exporting dependencies in frameworks
-                export 'com.github.gilleswillemot:bankApp-core-js:1.0.5'
-            }
-        }
-    }
-}
-
-//wrapper {
-//    gradleVersion = "5.3.1"
-//    distributionType = "ALL"
+///* ############################################################################################ */
+///* ##  IOS BUILD FRAMEWORK WHEN EXECUTING BUILD GRADLE SCRIPT WITH "ios" PARAMETER           ## */
+///* ############################################################################################ */
+///**
+// * Creates an iOS framework of the BankProvider implementation in Kotlin,
+// * that can be included in a xCode project.
+// *
+// * IMPORTANT: macOS host operating system is required to compile for iOS and macOS devices.
+// * source: https://kotlinlang.org/docs/tutorials/native/mpp-ios-android.html
+// */
+//
+//apply plugin: 'kotlin-multiplatform'
+//
+//repositories {
+//    mavenCentral()
 //}
+//
+//// instruct configure the project to generate a dynamic or shared library for us
+//kotlin {
+//    macosX64("native") {
+//        binaries {
+//            framework {
+//                baseName = "BankProviderFramework"
+//
+//                // Exporting dependencies in frameworks
+//                export 'com.github.gilleswillemot:bankApp-core:1.0.5'
+//            }
+//        }
+//    }
+//}
+//
+////wrapper {
+////    gradleVersion = "5.3.1"
+////    distributionType = "ALL"
+////}

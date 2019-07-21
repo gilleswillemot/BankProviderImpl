@@ -1,66 +1,120 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-multiplatform'
+/**
+ * Build via terminal: `gradlew :core:build`
+ *
+ * To build the .js files from the .jar files (into '/web' directory) run: `gradlew build -Pjs`
+ *
+ * For publishing purposes (only android publish is needed as for now): `gradlew :core:build -Pnopublish`
+ *
+ * This parameter (and android plugin) are possibly redundant, as normally everything could be build
+ * via kotlin-multiplatform plugin. Temporary build with parameter until solution is found.
+ */
 
-android {
-    compileSdkVersion 28
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+if (project.hasProperty("js")) {
+    project.logger.lifecycle('building JavaScript files.')
+    apply from: "build-js.gradle"
+} else {
+    apply plugin: 'com.android.library'
+    // for publishing purposes, per platform the artifact names etc will autom. be configured (to not have duplicate .jar files).
+    // Otherwise error when publishing via jitpack: > A POM cannot have multiple artifacts
+    // with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
+    // MavenArtifact core:jar:jar:null.
+    apply plugin: 'maven-publish'
+
+    repositories {
+        mavenCentral()
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+    group = 'be.abstraction.providers'
+    version = '0.0.1'
+
+    android {
+        compileSdkVersion 28
+        defaultConfig {
+            minSdkVersion 21
+            targetSdkVersion 28
+            versionCode 1
+            versionName "1.0"
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
-    }
-}
-
-kotlin {
-    js()
-
-    sourceSets {
-        // We add the source set origin, otherwise the files in src/main/java would not be compiled.
-        main.kotlin.srcDirs += 'src/main/java'
-
-        commonMain {
-            dependsOn main
-            kotlin.srcDir('src')
-            dependencies {
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             }
         }
-//        commonTest {
-//            dependsOn main
-//            kotlin.srcDir('test')
-//        }
-//        jsMain {
-//            dependsOn main
-//            dependsOn commonMain
-////          kotlin.srcDir('src')
-//            dependencies {
-//                implementation 'com.github.gilleswillemot:bankApp-core-js:1.0.5'
-//           }
-//        }
+        lintOptions {
+            abortOnError false
+        }
+        // Added sourceSets as I renamed the java folder to kotlin.
+        sourceSets {
+            main.java.srcDirs += 'src/main/kotlin'
+        }
     }
-}
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // dependency on another multi-platform library
-    implementation 'com.github.gilleswillemot:bankApp-core:1.1.1'
+    apply plugin: 'kotlin-multiplatform'
 
-    // this is needed to compile kotlin code to js (e.g. listOf and it)
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+/** kotlin multiplatform has a predefined template structure with a commonMain, thus
+ * references to your source are needed if deviating from this convention.
+ * This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
+ * look like: /src/commonMain/kotlin
+ */
+    kotlin {
+        jvm()
+        js()
+        // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
+        android {
+            publishLibraryVariants("release", "debug")
+        }
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
+        sourceSets {
+            commonMain {
+                // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
+                // otherwise the files in src/main/kotlin would not be compiled.
+                kotlin.srcDir('src/main/kotlin')
+                resources.srcDir('src/main/res')
+                dependencies {
+                    // dependency on another multi-platform library that consists of the interfaces to extend
+                    implementation 'com.github.gilleswillemot.bankApp-core:core-jvm:1.2.9'
 
-repositories {
-    mavenCentral()
+                    // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
+                    implementation kotlin('stdlib-common')
+                }
+            }
+            commonTest {
+                kotlin.srcDir('src/test/java')
+                dependencies {
+                    implementation kotlin('test-common')
+                    implementation kotlin('test-annotations-common')
+                    implementation kotlin('test-junit')
+                }
+            }
+            jsMain {
+                dependencies {
+                    // dependency on another multi-platform library that consists of the interfaces to extend
+                    implementation 'com.github.gilleswillemot.bankApp-core:core-js:1.2.9'
+                    // this is needed to compile kotlin code to js (e.g. listOf and it)
+                    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+                }
+            }
+//        commonAndroidTest {
+//            kotlin.srcDir('src/androidTest/java')
+//        }
+            // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
+            jvm().compilations.main.defaultSourceSet {
+                dependencies {
+                    implementation kotlin('stdlib-jdk8')
+                }
+            }
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.2'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    }
 }

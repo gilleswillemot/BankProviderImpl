@@ -1,2 +1,2 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="be.abstraction.providers"/>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="be.abstraction.providers"/>
