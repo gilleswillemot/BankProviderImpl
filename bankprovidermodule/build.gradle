@@ -66,13 +66,12 @@ kotlin {
     android {
         publishLibraryVariants("release", "debug")
     }
-    macosX64("native") {
+    configure([macosX64("macos"), iosX64(), iosArm64()]) {
         binaries {
             framework {
                 baseName = "BankProviderFramework"
-
-                // Exporting dependencies in frameworks
-                export 'com.github.gilleswillemot.bankApp-core:core-jvm:1.2.9' // probably core-macosx64 needed
+//                // Exporting dependencies in frameworks
+//                export 'com.github.gilleswillemot.bankApp-core:core-jvm:1.2.9' // probably core-macosx64 needed
             }
         }
     }
@@ -84,31 +83,36 @@ kotlin {
             kotlin.srcDir('src/main/kotlin')
             dependencies {
                 // dependency on another multi-platform library that consists of the interfaces to extend
-                implementation 'com.github.gilleswillemot.bankApp-core:core-jvm:1.2.9'
+                implementation 'com.github.gilleswillemot.bankApp-core:core-jvm:1.3.3'
 
                 // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
                 implementation kotlin('stdlib-common')
             }
         }
-        commonTest {
-            kotlin.srcDir('src/test/java')
+//        commonTest { commented because tests are written in java an kotlin native only compiles kotlin.
+//            kotlin.srcDir('src/test/java')
+//            dependencies {
+//                implementation kotlin('test-common')
+//                implementation kotlin('test-annotations-common')
+//                implementation kotlin('test-junit')
+//            }
+//        }
+        nativeMain {
+            dependsOn commonMain
             dependencies {
-                implementation kotlin('test-common')
-                implementation kotlin('test-annotations-common')
-                implementation kotlin('test-junit')
+                implementation files('dependencies/bankAppCore/core.klib')
             }
+        }
+        configure([macosMain, iosX64Main, iosArm64Main]) {
+            dependsOn nativeMain
+
         }
         jsMain {
             dependencies {
-                // dependency on another multi-platform library that consists of the interfaces to extend
-                implementation 'com.github.gilleswillemot.bankApp-core:core-js:1.2.9'
                 // this is needed to compile kotlin code to js (e.g. listOf and it)
                 implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
             }
         }
-//        commonAndroidTest {
-//            kotlin.srcDir('src/androidTest/java')
-//        }
         // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
         jvm().compilations.main.defaultSourceSet {
             dependencies {

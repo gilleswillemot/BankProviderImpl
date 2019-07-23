@@ -5,5 +5,5 @@
 This library contains a module, created via Android Studio, which has a dependency on com.github.gilleswillemot:bankApp-core
 as it extends and implements the IBankProvider interface.
 
-Using kotlin-multiplatform we will build different targets (jvm, js, ios, android) so that this module can be shared in different
+Using kotlin-multiplatform we build different targets (jvm, js, ios, android) in order to share this module over different
 web and native applications.
