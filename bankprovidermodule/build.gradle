@@ -109,11 +109,11 @@ kotlin {
 
             dependencies {
                 if (name == 'macosMain') {
-                    implementation("com.github.gilleswillemot:bankApp-core-macos:1.0.1")
+                    api 'com.github.gilleswillemot:bankApp-core-macos:1.0.1'
                 } else if (name == 'iosX64Main') {
-                    implementation("com.github.gilleswillemot:bankApp-core-iosX64:1.0.1")
-                } else {
-                    implementation("com.github.gilleswillemot:bankApp-core-iosArm64:1.0.1")
+                    api 'com.github.gilleswillemot:bankApp-core-iosX64:1.0.1'
+                } else if (name == 'iosArm64Main') {
+                    api 'com.github.gilleswillemot:bankApp-core-iosArm64:1.0.1'
                 }
             }
         }
