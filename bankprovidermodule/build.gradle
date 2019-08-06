@@ -64,7 +64,7 @@ kotlin {
                 baseName = "BankProviderFramework" + platform
                 println 'framework ' + platform
                 // Exporting dependencies in frameworks
-               if (platform == 'macos') {
+                if (platform == 'macos') {
                     export "com.github.gilleswillemot:bankApp-core-macos:1.0.1"
                 } else if (platform == 'iosX64') {
                     export "com.github.gilleswillemot:bankApp-core-iosX64:1.0.1"
@@ -88,20 +88,8 @@ kotlin {
                 implementation kotlin('stdlib-common')
             }
         }
-//        commonTest { commented because tests are written in java an kotlin native only compiles kotlin.
-//            kotlin.srcDir('src/test/java')
-//            dependencies {
-//                implementation kotlin('test-common')
-//                implementation kotlin('test-annotations-common')
-//                implementation kotlin('test-junit')
-//            }
-//        }
         nativeMain {
             dependsOn commonMain
-//            dependencies {
-//                implementation("com.github.gilleswillemot:bankApp-core:1.0.1")
-//                implementation files('dependencies/bankAppCore/core.klib')
-//            }
         }
         configure([macosMain, iosX64Main, iosArm64Main]) {
             dependsOn nativeMain
