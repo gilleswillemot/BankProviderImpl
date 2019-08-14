@@ -3,10 +3,19 @@ package be.abstraction.providers
 import be.abstraction.core.interfaces.IBankProvider
 import be.abstraction.core.models.Bank
 
-class BankProvider(var banks: List<Bank>) : IBankProvider {
+class BankProvider : IBankProvider {
+    private lateinit var banks: List<Bank>
+
+    init {
+        initBanks()
+    }
 
     override fun getBanks(): List<Bank> {
-        val bankNames = listOf( // todo: make json of each be.bank, for if we'd add fields in the future.
+        return banks
+    }
+
+    private fun initBanks() {
+        val bankNames = listOf(
             "BNP Paribas",
             "ING",
             "KBC",
@@ -18,7 +27,5 @@ class BankProvider(var banks: List<Bank>) : IBankProvider {
         )
 
         banks = bankNames.map { Bank(it) }
-
-        return banks
     }
 }
