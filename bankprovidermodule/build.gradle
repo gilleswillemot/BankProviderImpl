@@ -58,11 +58,7 @@ if (project.hasProperty('js')) {
     kotlin {
         jvm()
         js()
-        // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-//        android()
-//            publishLibraryVariants("release", "debug")
-//        }
-        configure([macosX64("macos"), iosX64(), iosArm64()]) {
+         configure([macosX64("macos"), iosX64(), iosArm64()]) {
             def platform = name
             binaries {
                 framework {
@@ -139,13 +135,6 @@ if (project.hasProperty('js')) {
                     implementation kotlin('test-junit')
                 }
             }
-//            androidTest {
-//                dependsOn commonTest
-//                dependencies {
-//                    implementation kotlin('test-junit')
-//                    implementation 'com.github.gilleswillemot:bankApp-core-androidDebug:3.0.1' // otherwise compileAndroidDebug fail when building.
-//                }
-//            }
 //            jsTest { NOT YET SUPPORTED? JVM compiles tests though...
 //                dependsOn commonTest
 //            }
