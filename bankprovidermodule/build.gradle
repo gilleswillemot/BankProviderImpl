@@ -85,7 +85,7 @@ if (project.hasProperty('js')) {
                     // dependency on another multi-platform library that consists of the interfaces to extend
                     implementation 'com.github.gilleswillemot:bankApp-core:3.1.1' // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
 
-                    // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
+                    // if this dependency is removed => 'Kotlin not configured' in BankProvider class.
                     implementation kotlin('stdlib-common')
 
 //                    implementation "org.koin:koin-core:$koin_version"
