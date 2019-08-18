@@ -83,7 +83,6 @@ if (project.hasProperty('js')) {
                 kotlin.srcDir('src/main/kotlin')
                 dependencies {
                     // dependency on another multi-platform library that consists of the interfaces to extend
-//                    implementation 'com.github.gilleswillemot:bankApp-core-androidDebug:3.0.1' // otherwise compileAndroidDebug fail when building.
                     implementation 'com.github.gilleswillemot:bankApp-core:3.1.1' // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
 
                     // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
