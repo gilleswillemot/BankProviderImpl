@@ -1,6 +1,6 @@
 # BankProviderImpl
 
-[ ![Download](https://api.bintray.com/packages/gillesw/maven/bankApp-core/images/download.svg?version=3.1.1) ](https://bintray.com/gillesw/maven/bankApp-core/3.1.1/link)
+[![](https://jitpack.io/v/gilleswillemot/BankProviderImpl.svg)](https://jitpack.io/#gilleswillemot/BankProviderImpl)
 
 This Kotlin multiplatform library contains a module, created via Android Studio, which has a dependency on com.github.gilleswillemot:bankApp-core
 as it implements the IBankProvider interface.
