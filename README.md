@@ -8,7 +8,7 @@ as it implements the IBankProvider interface.
 Using kotlin-multiplatform we build different targets (jvm, js, ios, android) in order to share this module over different
 web and native applications.
 
-License
+## License
 Copyright 2019 gilleswillemot
 
 Licensed under the Apache License, Version 2.0 (the "License");
