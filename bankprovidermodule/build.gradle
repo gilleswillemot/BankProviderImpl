@@ -56,10 +56,10 @@ if (project.hasProperty('js')) {
  * look like: /src/commonMain/kotlin
  */
     kotlin {
-        jvm()
+//        jvm()
         js()
         // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-        android()
+//        android()
 //            publishLibraryVariants("release", "debug")
 //        }
         configure([macosX64("macos"), iosX64(), iosArm64()]) {
@@ -87,8 +87,8 @@ if (project.hasProperty('js')) {
                 kotlin.srcDir('src/main/kotlin')
                 dependencies {
                     // dependency on another multi-platform library that consists of the interfaces to extend
-                    implementation 'com.github.gilleswillemot:bankApp-core-androidDebug:3.0.1' // otherwise compileAndroidDebug fail when building.
-                    implementation 'com.github.gilleswillemot:bankApp-core:3.0.1' // for metadata
+//                    implementation 'com.github.gilleswillemot:bankApp-core-androidDebug:3.0.1' // otherwise compileAndroidDebug fail when building.
+                    implementation 'com.github.gilleswillemot:bankApp-core:3.0.1' // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
 
                     // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
                     implementation kotlin('stdlib-common')
@@ -127,25 +127,25 @@ if (project.hasProperty('js')) {
                 }
             }
             // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
-            jvm().compilations.main.defaultSourceSet {
-                dependencies {
-                    implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.0.1'
-                    implementation kotlin('stdlib-jdk8')
-                }
-            }
-            // JVM-specific tests and their dependencies:
-            jvm().compilations.test.defaultSourceSet {
-                dependencies {
-                    implementation kotlin('test-junit')
-                }
-            }
-            androidTest {
-                dependsOn commonTest
-                dependencies {
-                    implementation kotlin('test-junit')
-                    implementation 'com.github.gilleswillemot:bankApp-core-androidDebug:3.0.1' // otherwise compileAndroidDebug fail when building.
-                }
-            }
+//            jvm().compilations.main.defaultSourceSet {
+//                dependencies {
+//                    implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.0.1'
+//                    implementation kotlin('stdlib-jdk8')
+//                }
+//            }
+//            // JVM-specific tests and their dependencies:
+//            jvm().compilations.test.defaultSourceSet {
+//                dependencies {
+//                    implementation kotlin('test-junit')
+//                }
+//            }
+//            androidTest {
+//                dependsOn commonTest
+//                dependencies {
+//                    implementation kotlin('test-junit')
+//                    implementation 'com.github.gilleswillemot:bankApp-core-androidDebug:3.0.1' // otherwise compileAndroidDebug fail when building.
+//                }
+//            }
 //            jsTest { NOT YET SUPPORTED? JVM compiles tests though...
 //                dependsOn commonTest
 //            }
