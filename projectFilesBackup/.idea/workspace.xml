@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AvailableLibraryUpdateStorage">
+    <library-updates>
+      <library-update>
+        <group-id>org.jetbrains.kotlin</group-id>
+        <name>kotlin-stdlib</name>
+        <version>1.3.41</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>junit</group-id>
+        <name>junit</name>
+        <version>4.13-beta-3</version>
+        <repository>JCenter,Maven Central</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support.test</group-id>
+        <name>runner</name>
+        <version>1.0.2</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+      <library-update>
+        <group-id>com.android.support.test.espresso</group-id>
+        <name>espresso-core</name>
+        <version>3.0.2</version>
+        <repository>Google,Android Repository</repository>
+      </library-update>
+    </library-updates>
+    <last-search-timestamp>1563370789348</last-search-timestamp>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a4df31f8-15bb-46c8-beab-6f652bbefae6" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/build/classes/" />
+    <ignored path="$PROJECT_DIR$/bankprovidermodule/.gradle/" />
+    <ignored path="$PROJECT_DIR$/bankprovidermodule/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/bankApp_impl$BankProviderUnitTests.ic" NAME="BankProviderUnitTests Coverage Results" MODIFIED="1563611374651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>be.abstraction.providers.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/bankprovidermodule">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bankApp-impl" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bankApp-impl" type="f1a62948:ProjectNode" />
+                <item name=":bankprovidermodule" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bankApp-impl" type="f1a62948:ProjectNode" />
+                <item name=":bankprovidermodule" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bankApp-impl" type="f1a62948:ProjectNode" />
+                <item name=":bankprovidermodule" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bankprovidermodule/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="130" column="82" selection-start-line="130" selection-start-column="82" selection-end-line="130" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/kotlin/be/abstraction/assemblers/BankProviderAssembler.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-start-column="2" selection-end-line="10" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="29" selection-start-column="29" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/kotlin/be/abstraction/providers/BankProvider.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#34#124#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/kotlin/be/abstraction/providers/BankProviderTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <folding>
+                <element signature="e#34#89#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Gradle Kotlin DSL Build Script" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>java</find>
+      <find>com.android.tools.build:gradle</find>
+      <find>manifest</find>
+      <find>main</find>
+      <find>share</find>
+      <find>code</find>
+      <find>.aar</find>
+      <find>bankp</find>
+      <find>bank</find>
+      <find>0.3.0</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\Gilles\Desktop\Bachelorproef\code\bankApp-impl\bankprovidermodule\build\kotlin</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GroovyConsoleState">
+    <option name="list">
+      <list>
+        <Entry>
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
+          <option name="moduleName" value="bankprovidermodule" />
+          <option name="title" value="bankprovidermodule (Bundled Groovy 2.4.15)" />
+        </Entry>
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/commonMain/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/implementations/ExampleUnitTest.java" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/main/java/be/abstraction/implementations/BankProvider.kt.kt" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/androidTest/java/be/abstraction/implementations/ExampleInstrumentedTest.java" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/main/java/be/abstraction/implementations/BankProvider.kt" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/BankProviderUnitTestsKotlin.java" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/BankProviderUnitTests_Kotlin.kt" />
+        <option value="$PROJECT_DIR$/android-build.gradle" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/ExampleUnitTest.java" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/build-js-multiplatform.gradle" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/android-build.gradle" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/main/java/be/abstraction/providers/BankProvider.kt" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/BankProviderUnitTests.java" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/build-ios-framework.gradle" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/main/kotlin/be/abstraction/providers/BankProvider.kt" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/build-js.gradle" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/test/kotlin/BankProviderTest.kt" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/test/kotlin/be/abstraction/providers/BankProviderTest.kt" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/src/main/kotlin/be/abstraction/assemblers/BankProviderAssembler.kt" />
+        <option value="$PROJECT_DIR$/bankprovidermodule/build.gradle" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1920" />
+    <option name="height" value="987" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bankApp-impl" type="58d84e3e:PackageViewProjectNode" />
+              <item name="bankprovidermodule" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bankApp-impl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp-impl" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp-impl" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="bankprovidermodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp-impl" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="bankprovidermodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp-impl" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="bankprovidermodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp-impl" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="bankprovidermodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp-impl" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="bankprovidermodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="abstraction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bankApp-impl" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="bankprovidermodule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="abstraction" type="462c0819:PsiDirectoryNode" />
+              <item name="assemblers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Source Files'; set:Project Source Files; class com.jetbrains.cidr.lang.search.scopes.ProjectSourcesScopeProvider$SourceFilesScope">
+          <expand>
+            <path>
+              <item name="bankApp-impl" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="bankprovidermodule" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="bankprovidermodule" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="build" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="bankprovidermodule" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="build" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="generated" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="bankApp-impl" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="bankprovidermodule" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_directory_selection" value="$PROJECT_DIR$/bankprovidermodule/src/main/kotlin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bankApp-core" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gilles\Desktop\Bachelorproef\code\bankApp-impl\bankprovidermodule" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="be" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.abstraction.providers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gilles\Desktop\Bachelorproef\code\bankApp-impl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Android JUnit.BankProviderUnitTests">
+    <configuration name="BankProviderUnitTests (2)" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bankprovidermodule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.abstraction.providers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.abstraction.providers" />
+      <option name="MAIN_CLASS_NAME" value="be.abstraction.providers.BankProviderUnitTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankProviderUnitTests" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bankprovidermodule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.abstraction.providers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.abstraction.providers" />
+      <option name="MAIN_CLASS_NAME" value="be.abstraction.providers.BankProviderUnitTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankProviderUnitTestsKotlin" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bankprovidermodule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.abstraction.providers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.abstraction.providers" />
+      <option name="MAIN_CLASS_NAME" value="be.abstraction.providers.BankProviderUnitTestsKotlin" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="be.abstraction.providers in bankprovidermodule [bankprovidermodule]" type="AndroidJUnit" factoryName="Android JUnit" temporary="true">
+      <module name="bankprovidermodule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.abstraction.providers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.abstraction.providers" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankProviderTest [bankprovidermodule]" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="bankprovidermodule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.abstraction.providers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.abstraction.providers" />
+      <option name="MAIN_CLASS_NAME" value="be.abstraction.providers.BankProviderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.be.abstraction.providers in bankprovidermodule [bankprovidermodule]" />
+        <item itemvalue="Android JUnit.BankProviderUnitTests" />
+        <item itemvalue="Android JUnit.BankProviderUnitTestsKotlin" />
+        <item itemvalue="Android JUnit.BankProviderUnitTests (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4df31f8-15bb-46c8-beab-6f652bbefae6" name="Default Changelist" comment="" />
+      <created>1561809145670</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561809145670</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="BankProviderUnitTests - 2019.07.01 at 09h 50m 47s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderUnitTests - 2019.07.01 at 09h 51m 30s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderUnitTests - 2019.07.01 at 09h 54m 33s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderUnitTests - 2019.07.01 at 10h 00m 29s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderUnitTests - 2019.07.01 at 10h 18m 06s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderUnitTests - 2019.07.03 at 10h 26m 58s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderUnitTests - 2019.07.19 at 14h 58m 26s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderUnitTests - 2019.07.20 at 10h 29m 38s.xml">
+      <configuration name="BankProviderUnitTests" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BankProviderTest_[jvmTest] - 2019.08.17 at 19h 13m 47s.xml">
+      <configuration name="BankProviderTest [jvmTest]" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BankProviderTest_[jvmTest] - 2019.08.17 at 19h 14m 27s.xml">
+      <configuration name="BankProviderTest [jvmTest]" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24575424" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32997987" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32997987" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.32997987" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.498002" visible="true" weight="0.416499" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.501998" side_tool="true" weight="0.42957747" />
+      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.4995005" weight="0.4969819" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32997987" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.32997987" />
+      <window_info anchor="bottom" id="Debug" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32997987" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32967034" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info active="true" anchor="right" id="Assistant" order="5" visible="true" weight="0.32967034" />
+      <window_info anchor="right" id="Coverage" order="6" side_tool="true" weight="0.32967034" />
+      <window_info anchor="right" id="Hierarchy" order="7" weight="0.32967034" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.32967034" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32997987" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.32997987" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.32997987" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.4995005" visible="true" weight="0.43158954" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5004995" side_tool="true" weight="0.32997987" />
+      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.4995005" weight="0.32997987" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32997987" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.32997987" />
+      <window_info anchor="bottom" id="Debug" order="9" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32967034" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/runConfigurations.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/bankApp-impl.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/bankprovidermodule_nodejs.xml" />
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/bankprovidermodule_jvm.xml" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/java/be/bank/implementations/BankProvider.kt" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/java/be/abstraction/implementations/BankProvider.kt" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/implementations/ExampleUnitTest.java" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/androidTest/java/be/abstraction/implementations/ExampleInstrumentedTest.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.gilleswillemot.bankApp-core/core/0.3.0/48eea4414537864a9504502a7b43b630ea3fa7e8/core-0.3.0-sources.jar!/be/abstraction/core/models/Bank.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/BankProviderUnitTestsKotlin.java" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/BankProviderUnitTestsKotlin.kt" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/web/kotlin.meta.js" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/web/kotlin.js" />
+    <entry file="file://$PROJECT_DIR$/myLogs.txt" />
+    <entry file="file://$PROJECT_DIR$/logErrors.txt" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/bankprovidermodule.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/android-build.gradle" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build-js-multiplatform.gradle" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.41/8f361846168f853fb213b0ab02d193f02644548/kotlin-stdlib-common-1.3.41-sources.jar!/kotlin/collections/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/ExampleUnitTest.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.gilleswillemot/bankApp-core/1.0.5/bbea86cf8e55fefae87442972846d34fdfcc8aed/bankApp-core-1.0.5-sources.jar!/be/abstraction/core/interfaces/IBankProvider.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/java/be/abstraction/providers/BankProviderUnitTests.java" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/java/be/abstraction/providers/BankProvider.kt" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.gilleswillemot/bankApp-core/1.1.1/95ca799b75b60bbca32fa22362d3ec9de74d8835/bankApp-core-1.1.1-sources.jar!/be/abstraction/core/interfaces/IBankProvider.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/proguard-rules.pro">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build/classes/kotlin/js/main/bankprovidermodule.js.map">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build/classes/kotlin/js/main/bankprovidermodule/be/abstraction/providers/providers.kjsm">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build-ios-framework.gradle" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build/classes/kotlin/js/main/bankprovidermodule.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.gilleswillemot.bankApp-core/core-metadata/1.3.3/6a7d5dd2ef170a182692e7e9b58cee800d17a68c/core-metadata-1.3.3-sources.jar!/commonMain/be/abstraction/core/models/Bank.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/web/bankprovidermodule.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build-js.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/androidTest/java/be/abstraction/providers/ExampleInstrumentedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/kotlin/BankProviderTest.kt" />
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build/reports/tests/allTests/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2403" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/test/kotlin/be/abstraction/providers/BankProviderTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="e#34#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/kotlin/be/abstraction/providers/BankProvider.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#34#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/src/main/kotlin/be/abstraction/assemblers/BankProviderAssembler.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-start-column="2" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bankprovidermodule/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="130" column="82" selection-start-line="130" selection-start-column="82" selection-end-line="130" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="gradleExecuteTaskHistory">
+    <option value="" />
+  </component>
+</project>

@@ -58,7 +58,7 @@ if (project.hasProperty('js')) {
     kotlin {
         jvm()
         js()
-         configure([macosX64("macos"), iosX64(), iosArm64()]) {
+        configure([macosX64("macos"), iosX64(), iosArm64()]) {
             def platform = name
             binaries {
                 framework {
@@ -80,16 +80,14 @@ if (project.hasProperty('js')) {
             commonMain {
                 // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
                 // otherwise the files in src/main/kotlin would not be compiled.
-                kotlin.srcDir('src/main/kotlin')
+                kotlin.srcDir('src/main/kotlin') // 'src/main' could potentially be a better option.
                 dependencies {
                     // dependency on another multi-platform library that consists of the interfaces to extend
-                    implementation 'com.github.gilleswillemot:bankApp-core:3.1.1' // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
+                    implementation 'com.github.gilleswillemot:bankApp-core:3.1.1'
+                    // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
 
                     // if this dependency is removed => 'Kotlin not configured' in BankProvider class.
                     implementation kotlin('stdlib-common')
-
-//                    implementation "org.koin:koin-core:$koin_version"
-//                    implementation "org.koin:koin-android:$koin_version"
                 }
             }
             commonTest {
@@ -120,26 +118,36 @@ if (project.hasProperty('js')) {
             jsMain {
                 dependencies {
                     // this is needed to compile kotlin code to js (e.g. listOf and it)
-                    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+                    implementation kotlin('stdlib-js')
+//                    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
                     implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.1'
                 }
             }
+            // At this point, test tasks for Kotlin/JS are created but do not run tests by default,
+            // they should be manually configured to run the tests with a JavaScript test framework.
+//            jsTest {
+//                // dependsOn commonTest
+//                dependencies {
+//                    implementation kotlin('test-js')
+//                }
+//            }
             // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
             jvm().compilations.main.defaultSourceSet {
+                kotlin.srcDir('src/jvmMain')
                 dependencies {
                     implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.1.1'
                     implementation kotlin('stdlib-jdk8')
+
+                    implementation "org.koin:koin-core:$koin_version"
                 }
             }
             // JVM-specific tests and their dependencies:
             jvm().compilations.test.defaultSourceSet {
+                kotlin.srcDir('src/test/java')
                 dependencies {
                     implementation kotlin('test-junit')
                 }
             }
-//            jsTest { NOT YET SUPPORTED? JVM compiles tests though...
-//                dependsOn commonTest
-//            }
         }
     }
 
