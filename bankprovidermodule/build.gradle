@@ -104,11 +104,11 @@ if (project.hasProperty('js')) {
                 dependsOn nativeMain
             }
             configure([macosMain, iosX64Main, iosArm64Main]) {
-                dependsOn nativeMain
                 println name
 
                 dependencies {
                     if (name == 'macosMain') {
+                        dependsOn nativeMain
                         api 'com.github.gilleswillemot:bankApp-core-macos:3.1.1'
                     } else if (name == 'iosX64Main') {
                         dependsOn iosMain
