@@ -47,7 +47,6 @@ if (project.hasProperty('js')) {
         }
     }
 
-
     apply plugin: 'kotlin-multiplatform'
 
 /** kotlin multiplatform has a predefined "template structure" with a commonMain, thus
@@ -101,6 +100,9 @@ if (project.hasProperty('js')) {
             nativeMain {
                 dependsOn commonMain
             }
+            iosMain {
+                dependsOn nativeMain
+            }
             configure([macosMain, iosX64Main, iosArm64Main]) {
                 dependsOn nativeMain
                 println name
@@ -109,8 +111,10 @@ if (project.hasProperty('js')) {
                     if (name == 'macosMain') {
                         api 'com.github.gilleswillemot:bankApp-core-macos:3.1.1'
                     } else if (name == 'iosX64Main') {
+                        dependsOn iosMain
                         api 'com.github.gilleswillemot:bankApp-core-iosX64:3.1.1'
                     } else if (name == 'iosArm64Main') {
+                        dependsOn iosMain
                         api 'com.github.gilleswillemot:bankApp-core-iosArm64:3.1.1'
                     }
                 }

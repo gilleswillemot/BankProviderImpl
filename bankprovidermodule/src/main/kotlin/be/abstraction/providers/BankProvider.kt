@@ -15,17 +15,8 @@ class BankProvider : IBankProvider {
     }
 
     private fun initBanks() {
-        val bankNames = listOf(
-            "BNP Paribas",
-            "ING",
-            "KBC",
-            "Europabank",
-            "Beobank",
-            "Belfius",
-            "AXA",
-            "Argenta"
-        )
-
-        banks = bankNames.map { Bank(it) }
+        banks = platformSpecificBankNames().map { Bank(it) }
     }
 }
+
+expect fun platformSpecificBankNames(): List<String>
