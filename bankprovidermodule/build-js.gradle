@@ -3,7 +3,7 @@ apply plugin: 'kotlin2js'
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-    implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.2'
+    implementation 'com.github.gilleswillemot:bankApp-core-js:3.2.1'
 }
 
 task assembleWeb(type: Sync) {
