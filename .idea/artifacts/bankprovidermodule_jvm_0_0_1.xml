@@ -2,7 +2,7 @@
   <artifact type="jar" name="bankprovidermodule-jvm-0.0.1">
     <output-path>C:\Users\Gilles\Desktop\Bachelorproef\code\bankApp-impl\bankprovidermodule\build\libs</output-path>
     <root id="archive" name="bankprovidermodule-jvm-0.0.1.jar">
-      <element id="module-output" name="bankprovidermodule_jvmMain" />
+      <element id="module-output" name="be.abstraction.providers-bankprovidermodule_jvmMain" />
     </root>
   </artifact>
 </component>

@@ -1,158 +1,114 @@
-/**
- * Build via terminal: `gradlew build`
- *
- * If you want to create the kotlin library (kotlin.js) => `gradlew build -Pjs`
- */
+//repositories {
+//    mavenCentral()
+//}
 
-if (project.hasProperty('js')) {
-    apply from: 'build-js.gradle'
-} else {
-    apply plugin: 'com.android.library'
-// for publishing purposes, per platform the artifact names etc will autom. be configured (to not have duplicate .jar files).
-// Otherwise error when publishing via jitpack: > A POM cannot have multiple artifacts
-// with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
-// MavenArtifact core:jar:jar:null.
-    apply plugin: 'maven-publish'
+group = 'be.abstraction.providers'
+version = '0.0.1'
 
-    repositories {
-        mavenCentral()
-    }
-
-    group = 'be.abstraction.providers'
-    version = '0.0.1'
-
-    android {
-        compileSdkVersion 28
-        defaultConfig {
-            minSdkVersion 21
-            targetSdkVersion 28
-            versionCode 1
-            versionName "1.0"
-            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        }
-        buildTypes {
-            release {
-                minifyEnabled false
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            }
-        }
-        lintOptions {
-            abortOnError false
-        }
-        // Added sourceSets as I renamed the java folder to kotlin.
-        sourceSets {
-            main.java.srcDirs += 'src/main/kotlin'
-            test.java.srcDirs += 'src/test/kotlin'
-//            androidTest.java.srcDirs += 'src/androidTest/kotlin'
-        }
-    }
-
-    apply plugin: 'kotlin-multiplatform'
+apply plugin: 'maven-publish'
+apply plugin: 'kotlin-multiplatform'
 
 /** kotlin multiplatform has a predefined "template structure" with a commonMain, thus
  * references to your source are needed if deviating from this convention.
  * This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
  * look like: /src/commonMain/kotlin
  */
-    kotlin {
-        jvm()
-        js()
-        configure([macosX64("macos"), iosX64(), iosArm64()]) {
-            def platform = name
-            binaries {
-                framework {
-                    baseName = "BankProviderFramework" + platform
-                    println 'framework ' + platform
-                    // Exporting dependencies in frameworks
-                    if (platform == 'macos') {
-                        export "com.github.gilleswillemot:bankApp-core-macos:3.1.2"
-                    } else if (platform == 'iosX64') {
-                        export "com.github.gilleswillemot:bankApp-core-iosX64:3.1.2"
-                    } else {
-                        export "com.github.gilleswillemot:bankApp-core-iosArm64:3.1.2"
-                    }
+kotlin {
+    jvm()
+    js()
+    configure([macosX64("macos"), iosX64(), iosArm64()]) {
+        def platform = name
+        binaries {
+            framework {
+                baseName = "BankProviderFramework" + platform
+                println 'framework ' + platform
+                // Exporting dependencies in frameworks
+                if (platform == 'macos') {
+                    export "com.github.gilleswillemot:bankApp-core-macos:3.1.2"
+                } else if (platform == 'iosX64') {
+                    export "com.github.gilleswillemot:bankApp-core-iosX64:3.1.2"
+                } else {
+                    export "com.github.gilleswillemot:bankApp-core-iosArm64:3.1.2"
                 }
             }
         }
+    }
 
-        sourceSets {
-            commonMain {
-                // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
-                // otherwise the files in src/main/kotlin would not be compiled.
-                kotlin.srcDir('src/main/kotlin') // 'src/main' could potentially be a better option.
-                dependencies {
-                    // dependency on another multi-platform library that consists of the interfaces to extend
-                    implementation 'com.github.gilleswillemot:bankApp-core:3.1.2'
-                    // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
+    sourceSets {
+        commonMain {
+            // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
+            // otherwise the files in src/main/kotlin would not be compiled.
+            kotlin.srcDir('src/main/kotlin') // 'src/main' could potentially be a better option.
+            dependencies {
+                // dependency on another multi-platform library that consists of the interfaces to extend
+                implementation 'com.github.gilleswillemot:bankApp-core:3.1.2'
+                // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
 
-                    // if this dependency is removed => 'Kotlin not configured' in BankProvider class.
-                    implementation kotlin('stdlib-common')
-                }
+                // if this dependency is removed => 'Kotlin not configured' in BankProvider class.
+                implementation kotlin('stdlib-common')
             }
-            commonTest {
-                kotlin.srcDir('src/test/kotlin')
-                dependencies {
-                    implementation kotlin('test-common')
-                    implementation kotlin('test-annotations-common')
+        }
+        commonTest {
+            kotlin.srcDir('src/test/kotlin')
+            dependencies {
+                implementation kotlin('test-common')
+                implementation kotlin('test-annotations-common')
 
+            }
+        }
+        nativeMain {
+            dependsOn commonMain
+        }
+        configure([macosMain, iosX64Main, iosArm64Main]) {
+            dependsOn nativeMain
+            dependencies {
+                if (name == 'macosMain') {
+                    api 'com.github.gilleswillemot:bankApp-core-macos:3.1.2'
+                } else if (name == 'iosX64Main') {
+                    api 'com.github.gilleswillemot:bankApp-core-iosX64:3.1.2'
+                } else if (name == 'iosArm64Main') {
+                    api 'com.github.gilleswillemot:bankApp-core-iosArm64:3.1.2'
                 }
             }
-            nativeMain {
-                dependsOn commonMain
+        }
+        jsMain {
+            dependencies {
+                // this is needed to compile kotlin code to js (e.g. listOf and it)
+                implementation kotlin('stdlib-js')
+                implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.2'
             }
-            configure([macosMain, iosX64Main, iosArm64Main]) {
-                dependsOn nativeMain
-                dependencies {
-                    if (name == 'macosMain') {
-                        api 'com.github.gilleswillemot:bankApp-core-macos:3.1.2'
-                    } else if (name == 'iosX64Main') {
-                        api 'com.github.gilleswillemot:bankApp-core-iosX64:3.1.2'
-                    } else if (name == 'iosArm64Main') {
-                        api 'com.github.gilleswillemot:bankApp-core-iosArm64:3.1.2'
-                    }
-                }
-            }
-            jsMain {
-                dependencies {
-                    // this is needed to compile kotlin code to js (e.g. listOf and it)
-                    implementation kotlin('stdlib-js')
-                    implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.2'
-                }
-            }
-            // At this point, test tasks for Kotlin/JS are created but do not run tests by default,
-            // they should be manually configured to run the tests with a JavaScript test framework. (e.g. Mocha)
+        }
+        // At this point, test tasks for Kotlin/JS are created but do not run tests by default,
+        // they should be manually configured to run the tests with a JavaScript test framework. (e.g. Mocha)
 //            jsTest {
 //                // dependsOn commonTest
 //                dependencies {
 //                    implementation kotlin('test-js')
 //                }
 //            }
-            // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
-            jvm().compilations.main.defaultSourceSet {
-                kotlin.srcDir('src/jvmMain')
-                dependencies {
-                    implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.1.2'
-                    implementation kotlin('stdlib-jdk8')
+        // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
+        jvm().compilations.main.defaultSourceSet {
+            kotlin.srcDir('src/jvmMain')
+            dependencies {
+                implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.1.2'
+                implementation kotlin('stdlib-jdk8')
 
-                    implementation "org.koin:koin-core:$koin_version"
-                }
+                implementation "org.koin:koin-core:$koin_version"
             }
-            // JVM-specific tests and their dependencies:
-            jvm().compilations.test.defaultSourceSet {
-                kotlin.srcDir('src/test/java')
-                dependencies {
-                    implementation kotlin('test-junit')
-                }
+        }
+        // JVM-specific tests and their dependencies:
+        jvm().compilations.test.defaultSourceSet {
+            kotlin.srcDir('src/test/java')
+            dependencies {
+                implementation kotlin('test-junit')
             }
-         }
+        }
     }
+}
 
-    dependencies {
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-        testImplementation 'junit:junit:4.12'
-        androidTestImplementation 'com.android.support.test:runner:1.0.2'
-        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    }
+/**
+* If you want to create the kotlin library (kotlin.js) => `gradlew build -Pjs`
+*/
+if (project.hasProperty('js')) {
+    apply from: 'build-js.gradle'
 }
