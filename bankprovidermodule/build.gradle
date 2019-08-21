@@ -65,11 +65,11 @@ if (project.hasProperty('js')) {
                     println 'framework ' + platform
                     // Exporting dependencies in frameworks
                     if (platform == 'macos') {
-                        export "com.github.gilleswillemot:bankApp-core-macos:3.1.1"
+                        export "com.github.gilleswillemot:bankApp-core-macos:3.1.2"
                     } else if (platform == 'iosX64') {
-                        export "com.github.gilleswillemot:bankApp-core-iosX64:3.1.1"
+                        export "com.github.gilleswillemot:bankApp-core-iosX64:3.1.2"
                     } else {
-                        export "com.github.gilleswillemot:bankApp-core-iosArm64:3.1.1"
+                        export "com.github.gilleswillemot:bankApp-core-iosArm64:3.1.2"
                     }
                 }
             }
@@ -82,7 +82,7 @@ if (project.hasProperty('js')) {
                 kotlin.srcDir('src/main/kotlin') // 'src/main' could potentially be a better option.
                 dependencies {
                     // dependency on another multi-platform library that consists of the interfaces to extend
-                    implementation 'com.github.gilleswillemot:bankApp-core:3.1.1'
+                    implementation 'com.github.gilleswillemot:bankApp-core:3.1.2'
                     // Otherwise :bankprovidermodule:compileKotlinMetadata FAILED
 
                     // if this dependency is removed => 'Kotlin not configured' in BankProvider class.
@@ -104,11 +104,11 @@ if (project.hasProperty('js')) {
                 dependsOn nativeMain
                 dependencies {
                     if (name == 'macosMain') {
-                        api 'com.github.gilleswillemot:bankApp-core-macos:3.1.1'
+                        api 'com.github.gilleswillemot:bankApp-core-macos:3.1.2'
                     } else if (name == 'iosX64Main') {
-                        api 'com.github.gilleswillemot:bankApp-core-iosX64:3.1.1'
+                        api 'com.github.gilleswillemot:bankApp-core-iosX64:3.1.2'
                     } else if (name == 'iosArm64Main') {
-                        api 'com.github.gilleswillemot:bankApp-core-iosArm64:3.1.1'
+                        api 'com.github.gilleswillemot:bankApp-core-iosArm64:3.1.2'
                     }
                 }
             }
@@ -116,12 +116,11 @@ if (project.hasProperty('js')) {
                 dependencies {
                     // this is needed to compile kotlin code to js (e.g. listOf and it)
                     implementation kotlin('stdlib-js')
-//                    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-                    implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.1'
+                    implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.2'
                 }
             }
             // At this point, test tasks for Kotlin/JS are created but do not run tests by default,
-            // they should be manually configured to run the tests with a JavaScript test framework.
+            // they should be manually configured to run the tests with a JavaScript test framework. (e.g. Mocha)
 //            jsTest {
 //                // dependsOn commonTest
 //                dependencies {
@@ -132,7 +131,7 @@ if (project.hasProperty('js')) {
             jvm().compilations.main.defaultSourceSet {
                 kotlin.srcDir('src/jvmMain')
                 dependencies {
-                    implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.1.1'
+                    implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.1.2'
                     implementation kotlin('stdlib-jdk8')
 
                     implementation "org.koin:koin-core:$koin_version"
@@ -145,7 +144,7 @@ if (project.hasProperty('js')) {
                     implementation kotlin('test-junit')
                 }
             }
-        }
+         }
     }
 
     dependencies {

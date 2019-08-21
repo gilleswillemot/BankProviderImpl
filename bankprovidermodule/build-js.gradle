@@ -2,25 +2,11 @@
 apply plugin: 'kotlin2js'
 
 dependencies {
-    api "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-    implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    implementation 'com.github.gilleswillemot:bankApp-core-js:3.1.2'
 }
 
-/**
- * The feature "multi platform projects" is experimental and should be enabled explicitly.
- * https://stackoverflow.com/questions/48852066/kotlin-multi-platform-feature
- * Maar wij werken in een module, en niet in een project, dus:
- * https://stackoverflow.com/questions/46054600/android-studio-kotlin-compiler-warning
- * Maar voor :bankprovidermodule idpv :app
- * https://withhamit.tistory.com/201 => .idea > modules > xxx.iml 파일에서
- * en dan useProjectSettings="False" -> "true" 로 변경.
- * Bij ons zitten de .iml files van de module in de map bankprovidermodule onder het project.
- */
-
 task assembleWeb(type: Sync) {
-//    compileKotlin2Js {
-//        kotlinOptions.suppressWarnings = true
-//    }
     configurations.compile.each { File file ->
         from(zipTree(file.absolutePath), {
             includeEmptyDirs = false
