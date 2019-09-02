@@ -1,7 +1,6 @@
 package be.abstraction.providers
 
 import org.junit.Test
-
 import org.junit.Assert.*
 
 /**

@@ -14,7 +14,7 @@ if (project.hasProperty('js')) {
     kotlin {
         jvm()
         js()
-        configure([macosX64("macos"), iosX64(), iosArm64()]) {
+        configure([macosX64("macos"), iosX64(), iosArm64()]) { // macos target might not be needed.
             def platform = name
             binaries {
                 framework {
@@ -47,7 +47,7 @@ if (project.hasProperty('js')) {
                 }
             }
             commonTest {
-                kotlin.srcDir('src/test/kotlin')
+                // if we want to bundle the tests in a test folder: create folder 'test' in 'src' + kotlin.srcDir('src/test/kotlin')
                 dependencies {
                     implementation kotlin('test-common')
                     implementation kotlin('test-annotations-common')
@@ -96,7 +96,6 @@ if (project.hasProperty('js')) {
             }
             // JVM-specific tests and their dependencies:
             jvm().compilations.test.defaultSourceSet {
-                kotlin.srcDir('src/test/java')
                 dependencies {
                     implementation kotlin('test-junit')
                 }

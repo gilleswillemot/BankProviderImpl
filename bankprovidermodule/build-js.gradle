@@ -1,4 +1,6 @@
 // By default, kotlin2js does not expand the JARs in the build process, so we need to add an additional step in our build to do so:
+
+//https://stackoverflow.com/questions/48852066/kotlin-multi-platform-feature
 apply plugin: 'kotlin2js'
 
 dependencies {
