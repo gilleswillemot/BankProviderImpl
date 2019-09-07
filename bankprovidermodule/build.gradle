@@ -76,16 +76,7 @@ if (project.hasProperty('js')) {
                     implementation 'com.github.gilleswillemot:bankApp-core-js:3.2.1'
                 }
             }
-            // At this point, test tasks for Kotlin/JS are created but do not run tests by default,
-            // they should be manually configured to run the tests with a JavaScript test framework. (e.g. Mocha)
-//            jsTest {
-//                // dependsOn commonTest
-//                dependencies {
-//                    implementation kotlin('test-js')
-//                }
-//            }
-            // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
-            jvm().compilations.main.defaultSourceSet {
+            jvmMain {
                 kotlin.srcDir('src/jvmMain')
                 dependencies {
                     implementation 'com.github.gilleswillemot:bankApp-core-jvm:3.2.1'
@@ -94,8 +85,7 @@ if (project.hasProperty('js')) {
                     implementation "org.koin:koin-core:$koin_version"
                 }
             }
-            // JVM-specific tests and their dependencies:
-            jvm().compilations.test.defaultSourceSet {
+            jvmTest {
                 dependencies {
                     implementation kotlin('test-junit')
                 }
